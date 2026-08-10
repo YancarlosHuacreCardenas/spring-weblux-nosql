@@ -6,8 +6,8 @@ spring:
     name: spring-webflux-nosql
   data:
     mongodb:
-      database: DATABASE_MONGODB
-      uri: URL_MONDODB_ATALAS
+      database: springwebflux_db
+      uri: mongodb+srv://yancarloshuacre_db_user:5XfG1D7hZ5MnziV1@cluster0.mfokbuv.mongodb.net/?appName=Cluster0
 
 springdoc:
   api-docs:
