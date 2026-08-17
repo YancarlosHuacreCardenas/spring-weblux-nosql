@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "Spring WebFlux - Customer API (Local & Cloud)",
+		"description": "Pruebas POST y GET para la API Reactiva de Customer con MongoDB (database_local y database_cloud)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Guardar Cliente (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dni\": \"76543210\",\n  \"firstName\": \"Juan\",\n  \"lastName\": \"Pérez\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/api/customer/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"customer",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Listar Clientes (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Buscar Cliente por ID (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/customer/COLOCAR_ID_AQUI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"customer",
+						"COLOCAR_ID_AQUI"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

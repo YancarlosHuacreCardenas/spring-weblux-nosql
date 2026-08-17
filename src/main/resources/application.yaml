@@ -4,10 +4,8 @@ server:
 spring:
   application:
     name: spring-webflux-nosql
-  data:
-    mongodb:
-      database: springwebflux_db
-      uri: mongodb+srv://yancarloshuacre_db_user:5XfG1D7hZ5MnziV1@cluster0.mfokbuv.mongodb.net/?appName=Cluster0
+  profiles:
+    active: local # Cambiar a 'cloud' para conectar a MongoDB Atlas
 
 springdoc:
   api-docs:
@@ -16,3 +14,30 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
+
+---
+# Perfil Local (Docker MongoDB)
+spring:
+  config:
+    activate:
+      on-profile: local
+  data:
+    mongodb:
+      database: database_local
+      uri: mongodb://admin:admin12345@localhost:27017/database_local?authSource=admin
+
+---
+# Perfil Cloud (MongoDB Atlas)
+spring:
+  config:
+    activate:
+      on-profile: cloud
+  data:
+    mongodb:
+      database: database_cloud
+      uri: mongodb+srv://yancarloshuacre_db_user:5XfG1D7hZ5MnziV1@cluster0.mfokbuv.mongodb.net/database_cloud?appName=Cluster0
+
+
+
+
+
